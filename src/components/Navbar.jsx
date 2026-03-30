@@ -77,25 +77,37 @@ export default function Header() {
         <div className="flex gap-8">
           <button
             onClick={() => scrollToSection('home')}
-            className="hover:text-gray-300 transition cursor-pointer"
+            className="font-bold transition cursor-pointer hover:text-green-300 hover:drop-shadow-lg hover:shadow-green-500/50"
+            style={{ textShadow: 'var(--glow-effect, none)' }}
+            onMouseEnter={(e) => e.target.style.textShadow = '0 0 10px rgba(74, 222, 128, 0.8)'}
+            onMouseLeave={(e) => e.target.style.textShadow = 'none'}
           >
             Home
           </button>
           <button
             onClick={() => scrollToSection('about')}
-            className="hover:text-gray-300 transition cursor-pointer"
+            className="font-bold transition cursor-pointer hover:text-green-300 hover:drop-shadow-lg hover:shadow-green-500/50"
+            style={{ textShadow: 'var(--glow-effect, none)' }}
+            onMouseEnter={(e) => e.target.style.textShadow = '0 0 10px rgba(74, 222, 128, 0.8)'}
+            onMouseLeave={(e) => e.target.style.textShadow = 'none'}
           >
             About
           </button>
           <button
             onClick={() => scrollToSection('projects')}
-            className="hover:text-gray-300 transition cursor-pointer"
+            className="font-bold transition cursor-pointer hover:text-green-300 hover:drop-shadow-lg hover:shadow-green-500/50"
+            style={{ textShadow: 'var(--glow-effect, none)' }}
+            onMouseEnter={(e) => e.target.style.textShadow = '0 0 10px rgba(74, 222, 128, 0.8)'}
+            onMouseLeave={(e) => e.target.style.textShadow = 'none'}
           >
             Projects
           </button>
           <button
             onClick={() => scrollToSection('contact')}
-            className="hover:text-gray-300 transition cursor-pointer"
+            className="font-bold transition cursor-pointer hover:text-green-300 hover:drop-shadow-lg hover:shadow-green-500/50"
+            style={{ textShadow: 'var(--glow-effect, none)' }}
+            onMouseEnter={(e) => e.target.style.textShadow = '0 0 10px rgba(74, 222, 128, 0.8)'}
+            onMouseLeave={(e) => e.target.style.textShadow = 'none'}
           >
             Contact
           </button>

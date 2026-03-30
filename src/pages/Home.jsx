@@ -41,7 +41,7 @@ export default function Home() {
               <div className="text-5xl font-bold font-mono mb-4 text-gray-300">
                 <TypingText text="Hello(); I'm" delay={0.2} />
               </div>
-              <div className="text-7xl font-bold mb-8 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-500 bg-clip-text text-transparent">
+              <div className="text-7xl font-bold mb-8 bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
                 <TypingText text="S P Darshan" delay={0.8} />
               </div>
               <motion.div
