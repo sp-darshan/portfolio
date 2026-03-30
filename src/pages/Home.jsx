@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import profileImage from '../assets/images/Profile.webp';
 
 const TypingText = ({ text, delay = 0 }) => {
   const characters = text.split('');
@@ -65,7 +66,7 @@ export default function Home() {
             <div className="flex-1 flex justify-center ml-10">
               <div className="image-frame">
                 <motion.img
-                  src="/src/assets/images/Profile.webp"
+                  src={profileImage}
                   alt="Profile"
                   className="w-80 h-80 rounded-lg object-cover transition-transform duration-300"
                   initial={{ opacity: 0, scale: 0.9 }}
