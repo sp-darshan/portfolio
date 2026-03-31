@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 import profileImage from '../assets/images/Profile.webp';
+import About from './About';
+import Education from './Education';
+import Projects from './Projects';
+import BackToTop from '../components/BackToTop';
 
 const TypingText = ({ text, delay = 0 }) => {
   const characters = text.split('');
@@ -32,9 +36,9 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="min-h-screen flex items-center justify-center"
+        className="min-h-screen flex items-center justify-center scroll-mt-28"
       >
-        <div className="w-full max-w-6xl px-8 text-white">
+        <div className="w-full max-w-6xl px-8 pt-16 text-white ml-12">
           <div className="flex items-center justify-between gap-16">
             {/* Content */}
             <div className="flex-1">
@@ -60,11 +64,25 @@ export default function Home() {
               >
                 A passionate developer dedicated to crafting elegant solutions. Building digital experiences that matter.
               </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, y: [0, -8, 0] }}
+                transition={{ 
+                  opacity: { duration: 0.8, delay: 3.8 },
+                  y: { duration: 0.6, repeat: Infinity, repeatDelay: 1.0, delay: 3.8 }
+                }}
+                className="mt-8 relative inline-block border-2 border-green-400 rounded-lg p-1 bg-black/50"
+              >
+                <button className="px-3 py-1 text-xs text-green-400 font-bold transition-all duration-300 hover:text-green-300">
+                  Let's Connect
+                </button>
+                <div className="absolute -bottom-2 left-4 w-4 h-4 bg-black border-2 border-green-400 border-t-0 border-l-0 transform rotate-45"></div>
+              </motion.div>
             </div>
 
             {/* Image */}
-            <div className="flex-1 flex justify-center ml-10">
-              <div className="image-frame">
+            <div className="flex-1 flex justify-center">
+              <div className="image-frame -mt-18 -mr-16">
                 <motion.img
                   src={profileImage}
                   alt="Profile"
@@ -80,42 +98,13 @@ export default function Home() {
       </motion.section>
 
       {/* About Section */}
-      <motion.section
-        id="about"
-        initial={{ opacity: 1 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: false }}
-        className="min-h-screen text-white py-20"
-      >
-        <div className="container mx-auto px-4">
-          <div className="text-5xl font-bold mb-8">
-            <TypingText text="About Me" delay={0.2} />
-          </div>
-          <div className="text-lg text-gray-400">
-            <TypingText text="Tell your story here" delay={0.8} />
-          </div>
-        </div>
-      </motion.section>
+      <About />
 
-      {/* Projects Section */}
-      <motion.section
-        id="projects"
-        initial={{ opacity: 1 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: false }}
-        className="min-h-screen text-white py-20"
-      >
-        <div className="container mx-auto px-4">
-          <div className="text-5xl font-bold mb-8">
-            <TypingText text="My Projects" delay={0.2} />
-          </div>
-          <div className="text-lg text-gray-400">
-            <TypingText text="Showcase your work here" delay={0.8} />
-          </div>
-        </div>
-      </motion.section>
+      {/* Education Section */}
+      <Education />
+
+      {/* Project Section */}
+      <Projects />
 
       {/* Contact Section */}
       <motion.section
@@ -124,9 +113,9 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: false }}
-        className="min-h-screen text-white py-20"
+        className="min-h-screen text-white py-20 scroll-mt-32"
       >
-        <div className="container mx-auto px-4">
+        <div className="w-full max-w-6xl mx-auto px-8">
           <div className="text-5xl font-bold mb-8">
             <TypingText text="Contact Me" delay={0.2} />
           </div>
@@ -135,6 +124,8 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+
+      <BackToTop />
     </>
   );
 }

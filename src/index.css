@@ -2,6 +2,13 @@
 
 body, html {
   background: linear-gradient(to right, #000000, #1a1a1a) !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .image-frame {
@@ -50,3 +57,55 @@ body, html {
 .image-frame:hover img {
   transform: scale(1.08) translateZ(20px);
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  color: #22c55e;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 999;
+  padding: 0.5rem;
+}
+
+.back-to-top-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.back-to-top-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #22c55e;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+.back-to-top-text {
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #22c55e;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+}
+
+.back-to-top:hover .back-to-top-text {
+  letter-spacing: 3px;
+}
+

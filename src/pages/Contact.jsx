@@ -4,7 +4,10 @@ export default function Contact() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: false, amount: 0.3 }}
       className="min-h-screen bg-black text-white py-12 md:py-20 mt-24 md:mt-0"
     >
       <div className="container mx-auto px-4 md:px-6">

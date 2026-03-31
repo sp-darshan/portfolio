@@ -1,9 +1,31 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import navImage from '../assets/images/Nav.png';
 
 export default function Header() {
   const [isHovered, setIsHovered] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'education', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 200;
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -19,7 +41,7 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5"
     >
-      <nav className="backdrop-blur-md bg-white/10 text-white border border-white/20 rounded-3xl px-14 py-0 flex justify-between items-center gap-20 shadow-lg" style={{ width: 'auto', minWidth: '700px', overflow: 'hidden' }}>
+      <nav className="backdrop-blur-md bg-white/10 text-white border border-white/20 rounded-3xl px-18 py-0 flex justify-between items-center gap-20 shadow-lg" style={{ width: '1000px', overflow: 'hidden' }}>
         <motion.div
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
@@ -77,38 +99,37 @@ export default function Header() {
         <div className="flex gap-8">
           <button
             onClick={() => scrollToSection('home')}
-            className="font-bold transition cursor-pointer hover:text-green-300 hover:drop-shadow-lg hover:shadow-green-500/50"
-            style={{ textShadow: 'var(--glow-effect, none)' }}
-            onMouseEnter={(e) => e.target.style.textShadow = '0 0 10px rgba(74, 222, 128, 0.8)'}
-            onMouseLeave={(e) => e.target.style.textShadow = 'none'}
+            className="font-bold transition cursor-pointer px-3 py-1 rounded text-white flex items-center gap-2"
           >
+            {activeSection === 'home' && <span className="w-2 h-2 bg-green-400 rounded-full"></span>}
             Home
           </button>
           <button
             onClick={() => scrollToSection('about')}
-            className="font-bold transition cursor-pointer hover:text-green-300 hover:drop-shadow-lg hover:shadow-green-500/50"
-            style={{ textShadow: 'var(--glow-effect, none)' }}
-            onMouseEnter={(e) => e.target.style.textShadow = '0 0 10px rgba(74, 222, 128, 0.8)'}
-            onMouseLeave={(e) => e.target.style.textShadow = 'none'}
+            className="font-bold transition cursor-pointer px-3 py-1 rounded text-white flex items-center gap-2"
           >
+            {activeSection === 'about' && <span className="w-2 h-2 bg-green-400 rounded-full"></span>}
             About
           </button>
           <button
-            onClick={() => scrollToSection('projects')}
-            className="font-bold transition cursor-pointer hover:text-green-300 hover:drop-shadow-lg hover:shadow-green-500/50"
-            style={{ textShadow: 'var(--glow-effect, none)' }}
-            onMouseEnter={(e) => e.target.style.textShadow = '0 0 10px rgba(74, 222, 128, 0.8)'}
-            onMouseLeave={(e) => e.target.style.textShadow = 'none'}
+            onClick={() => scrollToSection('education')}
+            className="font-bold transition cursor-pointer px-3 py-1 rounded text-white flex items-center gap-2"
           >
+            {activeSection === 'education' && <span className="w-2 h-2 bg-green-400 rounded-full"></span>}
+            Education
+          </button>
+          <button
+            onClick={() => scrollToSection('projects')}
+            className="font-bold transition cursor-pointer px-3 py-1 rounded text-white flex items-center gap-2"
+          >
+            {activeSection === 'projects' && <span className="w-2 h-2 bg-green-400 rounded-full"></span>}
             Projects
           </button>
           <button
             onClick={() => scrollToSection('contact')}
-            className="font-bold transition cursor-pointer hover:text-green-300 hover:drop-shadow-lg hover:shadow-green-500/50"
-            style={{ textShadow: 'var(--glow-effect, none)' }}
-            onMouseEnter={(e) => e.target.style.textShadow = '0 0 10px rgba(74, 222, 128, 0.8)'}
-            onMouseLeave={(e) => e.target.style.textShadow = 'none'}
+            className="font-bold transition cursor-pointer px-3 py-1 rounded text-white flex items-center gap-2"
           >
+            {activeSection === 'contact' && <span className="w-2 h-2 bg-green-400 rounded-full"></span>}
             Contact
           </button>
         </div>
