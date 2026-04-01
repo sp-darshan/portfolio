@@ -66,12 +66,12 @@ export default function Home() {
               </motion.div>
               <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1, y: [0, -8, 0] }}
+                animate={{ opacity: 1, y: [0, -10, 0] }}
                 transition={{ 
                   opacity: { duration: 0.8, delay: 3.8 },
-                  y: { duration: 0.6, repeat: Infinity, repeatDelay: 1.0, delay: 3.8 }
+                  y: { duration: 0.6 , repeat: Infinity, repeatDelay: 1.0, delay: 3.8 }
                 }}
-                className="mt-8 relative inline-block border-2 border-green-400 rounded-lg p-1 bg-black/50"
+                className="mt-8 relative inline-block border-2 border-green-400 rounded-lg p-1 bg-black/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-white/50"
               >
                 <button className="px-3 py-1 text-xs text-green-400 font-bold transition-all duration-300 hover:text-green-300">
                   Let's Connect

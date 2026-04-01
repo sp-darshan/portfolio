@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import avvlogo from '../assets/images/avv-logo.png';
+import sctslogo from '../assets/images/scts-logo.png';
 
 export default function Education() {
   return (
@@ -16,16 +18,42 @@ export default function Education() {
           <h1 className="text-4xl font-bold font-mono">Education</h1>
           <div className="w-92 border-t-4 border-dashed border-green-400"></div>
         </div>
-        <div className='flex w-full'>
-          <div className="flex-1 text-lg text-white leading-relaxed max-w-4xl space-y-6 text-justify">
-            <div>
-              <h2 className="text-xl font-bold text-green-400 mb-2">Bachelor's Degree in Computer Communication Engineering</h2>
-              <p className="text-sm text-gray-500 mb-2">Amrita vishwa vidyapeetham | 2023 - present</p>
-              <p>I am currently pursuing a comprehensive degree in Computer Communication, gaining deep knowledge in algorithms, data structures, software engineering and various programming paradigms. My coursework focused on building strong foundational concepts that transformed my understanding of how systems work at scale.</p>
+        <div className='w-full flex gap-6'>
+          {/* Education Card 1 */}
+          <div className="flex-1 flex gap-6 bg-gray-900 rounded-lg p-4 border border-green-400 border-opacity-30 hover:border-opacity-60 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50">
+            {/* Image Section */}
+            <div className="w-1/6 h-24 bg-gray-800 rounded-lg flex-shrink-0 flex items-center justify-center">
+              <img 
+                src={avvlogo} 
+                alt="Amrita vishwa vidyapeetham" 
+                className="w-full h-full object-cover rounded-lg"
+              />
             </div>
             
+            {/* Content Section */}
+            <div className="flex-1">
+              <h2 className="text-lg font-bold text-green-400 mb-1">B.Tech in Computer Communication Engineering <span className="text-sm text-white font-mono"> | 2023 - present</span></h2>
+              <p className="text-sm font-bold text-gray-300">Amrita vishwa vidyapeetham, Coimbatore, India</p>
+
+            </div>
           </div>
-          <div className='flex-1'></div>
+
+          <div className="flex-1 flex gap-6 bg-gray-900 rounded-lg p-4 border border-green-400 border-opacity-30 hover:border-opacity-60 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50">
+            {/* Image Section */}
+            <div className="w-1/6 h-24 bg-gray-800 rounded-lg flex-shrink-0 flex items-center justify-center">
+              <img 
+                src={sctslogo} 
+                alt="Sri Chaitanya techno school" 
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            
+            {/* Content Section */}
+            <div className="flex-1">
+              <h2 className="text-lg font-bold text-green-400 mb-8">High School Diplomo<span className="text-sm text-white font-mono"> | 2021 - 2023</span></h2>
+              <p className="text-sm font-bold text-gray-300">Sri Chaitanya techno school, Coimbatore, Tamilnadu, India</p>
+            </div>
+          </div>
         </div>
       </div>
     </motion.section>
