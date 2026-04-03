@@ -181,6 +181,8 @@ export default function Projects() {
               {hasValidLink(featured.live) && (
                 <a
                   href={featured.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/70 text-black rounded-lg font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-green-300 hover:shadow-[0_2px_8px_rgba(34,197,94,0.18)]"
                 >
                   <FiExternalLink aria-hidden="true" />
@@ -189,6 +191,8 @@ export default function Projects() {
               )}
               <a
                 href={featured.github}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-green-400/70 text-green-300 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-400/10 hover:shadow-[0_2px_8px_rgba(34,197,94,0.16)]"
               >
                 <FiGithub aria-hidden="true" />
@@ -236,6 +240,8 @@ export default function Projects() {
                   {hasValidLink(project.live) && (
                     <a
                       href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-400/70 text-black text-sm rounded-lg font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-green-300 hover:shadow-[0_2px_8px_rgba(34,197,94,0.18)]"
                     >
                       <FiExternalLink aria-hidden="true" />
@@ -244,6 +250,8 @@ export default function Projects() {
                   )}
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-green-400/70 text-green-300 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-400/10 hover:shadow-[0_2px_8px_rgba(34,197,94,0.16)]"
                   >
                     <FiGithub aria-hidden="true" />
@@ -259,6 +267,8 @@ export default function Projects() {
         <div className="mt-18 text-center">
           <a
             href="https://github.com/sp-darshan"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/70 text-black rounded-lg font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-green-300 hover:shadow-[0_2px_8px_rgba(34,197,94,0.18)]"
           >
             <FiGithub aria-hidden="true" />

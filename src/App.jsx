@@ -3,12 +3,13 @@ import Header from './components/Navbar';
 import ContactPopup from './components/ContactPopup';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import MessageMe from './pages/MessageMe.jsx';
 
 export default function App() {
-  const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
+  const [activePopup, setActivePopup] = useState(null);
 
   useEffect(() => {
-    if (!isContactPopupOpen) {
+    if (!activePopup) {
       document.body.style.overflow = '';
       return;
     }
@@ -17,7 +18,7 @@ export default function App() {
 
     const handleEscape = (event) => {
       if (event.key === 'Escape') {
-        setIsContactPopupOpen(false);
+        setActivePopup((currentPopup) => (currentPopup === 'message' ? 'contact' : null));
       }
     };
 
@@ -27,14 +28,23 @@ export default function App() {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleEscape);
     };
-  }, [isContactPopupOpen]);
+  }, [activePopup]);
 
   return (
     <>
-      <Header onContactClick={() => setIsContactPopupOpen(true)} />
-      <Home onOpenContact={() => setIsContactPopupOpen(true)} />
+      <Header onContactClick={() => setActivePopup('contact')} />
+      <Home onOpenContact={() => setActivePopup('contact')} />
       <Footer />
-      <ContactPopup isOpen={isContactPopupOpen} onClose={() => setIsContactPopupOpen(false)} />
+      <ContactPopup
+        isOpen={activePopup === 'contact'}
+        onClose={() => setActivePopup(null)}
+        onMessageClick={() => setActivePopup('message')}
+      />
+      <MessageMe
+        isOpen={activePopup === 'message'}
+        onClose={() => setActivePopup(null)}
+        onBackToContact={() => setActivePopup('contact')}
+      />
     </>
   );
 }

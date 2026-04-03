@@ -48,6 +48,8 @@ export default function Certifications() {
                 </div>
                 <a
                   href={cert.credentialLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-green-300 hover:text-green-200 transition-colors"
                   title="View Credential"
                 >

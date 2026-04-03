@@ -43,7 +43,7 @@ const itemVariants = {
   },
 };
 
-export default function ContactPopup({ isOpen, onClose }) {
+export default function ContactPopup({ isOpen, onClose, onMessageClick }) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -78,6 +78,8 @@ export default function ContactPopup({ isOpen, onClose }) {
               <motion.a
                 variants={itemVariants}
                 href={`mailto:${contactDetails.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group block rounded-2xl border border-white/10 bg-white/5 p-3 transition-colors duration-300 hover:border-green-300/60 hover:bg-white/10"
               >
                 <div className="mb-2.5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white group-hover:text-green-300 mx-auto">
@@ -89,7 +91,11 @@ export default function ContactPopup({ isOpen, onClose }) {
 
               <motion.a
                 variants={itemVariants}
-                href={`mailto:${contactDetails.email}?subject=Let%27s%20Connect`}
+                href="#message-me"
+                onClick={(event) => {
+                  event.preventDefault();
+                  onMessageClick();
+                }}
                 className="group block rounded-2xl border border-white/10 bg-white/5 p-3 transition-colors duration-300 hover:border-green-300/60 hover:bg-white/10"
               >
                 <div className="mb-2.5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white group-hover:text-green-300 mx-auto">
@@ -106,7 +112,7 @@ export default function ContactPopup({ isOpen, onClose }) {
                 <a
                   href={contactDetails.linkedin}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 text-gray-200 transition-colors duration-300 hover:border-green-300/60 hover:text-green-300"
                   aria-label="LinkedIn"
                 >
@@ -115,7 +121,7 @@ export default function ContactPopup({ isOpen, onClose }) {
                 <a
                   href={contactDetails.github}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 text-gray-200 transition-colors duration-300 hover:border-green-300/60 hover:text-green-300"
                   aria-label="GitHub"
                 >
