@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sp-darshan.vercel.app/sitemap.xml

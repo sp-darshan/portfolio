@@ -14,7 +14,7 @@ const TypingText = ({ text, delay = 0 }) => {
   const characters = text.split('');
 
   return (
-    <div className="flex flex-wrap whitespace-pre">
+    <span className="inline-flex flex-wrap whitespace-pre">
       {characters.map((char, index) => (
         <motion.span
           key={index}
@@ -28,7 +28,7 @@ const TypingText = ({ text, delay = 0 }) => {
           {char}
         </motion.span>
       ))}
-    </div>
+    </span>
   );
 };
 
@@ -47,19 +47,19 @@ export default function Home({ onOpenContact }) {
           <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-16">
             {/* Content */}
             <div className="flex-1">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold font-mono mb-4 text-gray-300">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold font-mono mb-4 text-gray-300">
                 <TypingText text="Hello(); I'm" delay={0.2} />
-              </div>
-              <div className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 md:mb-8 bg-linear-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
+              </p>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 md:mb-8 bg-linear-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
                 <TypingText text="S P Darshan" delay={0.8} />
-              </div>
+              </h1>
               <motion.div
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 md:mb-12"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 2.2 }}
               >
-                I transform ideas<br />to &lt;code/&gt;.
+                <h2>I transform ideas<br />to &lt;code/&gt;.</h2>
               </motion.div>
               <motion.div
                 className="text-base sm:text-lg md:text-xl text-bold gray-300 leading-relaxed"
@@ -110,7 +110,7 @@ export default function Home({ onOpenContact }) {
               <div className="image-frame mt-4 md:-mt-18 md:-mr-16">
                 <motion.img
                   src={profileImage}
-                  alt="Profile"
+                  alt="S P Darshan portrait"
                   className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-lg object-cover transition-transform duration-300"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
