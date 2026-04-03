@@ -136,10 +136,10 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0.25 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.1 }}
       className="text-white py-16 md:py-24 flex justify-center scroll-mt-12"
     >
       <div className="w-full max-w-6xl px-4 sm:px-6 md:px-8">
@@ -147,7 +147,7 @@ export default function Projects() {
         {/* Title */}
         <div className="flex items-center gap-4 mb-8 md:mb-12">
           <h1 className="text-3xl md:text-4xl font-bold font-mono">My Projects</h1>
-          <div className="hidden md:block w-85 border-t-4 border-dashed border-green-400"></div>
+          <div className="w-28 sm:w-12 md:w-85 border-t-2 md:border-t-4 border-dashed border-green-400"></div>
         </div>
 
         {/* Featured Project */}

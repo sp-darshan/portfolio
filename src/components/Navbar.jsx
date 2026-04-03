@@ -81,7 +81,7 @@ export default function Header({ onContactClick }) {
               animate={{ translateY: isHovered || isMenuOpen ? 0 : 10 }}
               transition={{ duration: 0.3 }}
             />
-            {isHovered && (
+            {(isHovered || isMenuOpen) && (
               <motion.div
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}

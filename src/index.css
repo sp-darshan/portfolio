@@ -109,3 +109,9 @@ body::-webkit-scrollbar {
   letter-spacing: 3px;
 }
 
+@media (max-width: 767px) {
+  .back-to-top {
+    display: none !important;
+  }
+}
+
