@@ -147,7 +147,7 @@ export default function Projects() {
         {/* Title */}
         <div className="flex items-center gap-4 mb-8 md:mb-12">
           <h1 className="text-3xl md:text-4xl font-bold font-mono">My Projects</h1>
-          <div className="w-28 sm:w-12 md:w-85 border-t-2 md:border-t-4 border-dashed border-green-400"></div>
+          <div className="w-24 sm:w-12 md:w-85 border-t-2 md:border-t-4 border-dashed border-green-400"></div>
         </div>
 
         {/* Featured Project */}

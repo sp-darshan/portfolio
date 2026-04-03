@@ -15,7 +15,7 @@ export default function About() {
       <div className="w-full max-w-6xl px-4 sm:px-6 md:px-8">
         <div className="flex items-center gap-4 mb-8 md:mb-10">
           <h1 className="text-3xl md:text-4xl font-bold font-mono">About Me</h1>
-          <div className="w-40 sm:w-20 md:w-92 border-t-2 md:border-t-4 border-dashed border-green-400"></div>
+          <div className="w-30 sm:w-20 md:w-92 border-t-2 md:border-t-4 border-dashed border-green-400"></div>
         </div>
         <div className='flex w-full flex-col md:flex-row gap-8 md:gap-12'>
           <div className="flex-1 text-base md:text-lg text-gray-300 leading-relaxed max-w-4xl space-y-4 text-justify">
