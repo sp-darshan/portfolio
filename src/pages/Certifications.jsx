@@ -26,12 +26,12 @@ export default function Certifications() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: false, amount: 0.2 }}
-      className="text-white py-24 flex justify-center scroll-mt-24"
+      className="text-white py-16 md:py-24 flex justify-center scroll-mt-24"
     >
-      <div className="w-full max-w-6xl px-8">
-        <div className="flex items-center gap-4 mb-12">
-          <h1 className="text-4xl font-bold font-mono">Certifications</h1>
-          <div className="w-86 border-t-4 border-dashed border-green-400"></div>
+      <div className="w-full max-w-6xl px-4 sm:px-6 md:px-8">
+        <div className="flex items-center gap-4 mb-8 md:mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold font-mono">Certifications</h1>
+          <div className="hidden md:block w-86 border-t-4 border-dashed border-green-400"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">

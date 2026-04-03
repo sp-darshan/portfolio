@@ -43,18 +43,18 @@ export default function Home({ onOpenContact }) {
         transition={{ duration: 0.5 }}
         className="min-h-screen flex items-center justify-center scroll-mt-28"
       >
-        <div className="w-full max-w-6xl px-8 pt-16 text-white ml-12">
-          <div className="flex items-center justify-between gap-16">
+        <div className="w-full max-w-6xl px-4 sm:px-6 md:px-8 pt-20 md:pt-16 text-white">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-16">
             {/* Content */}
             <div className="flex-1">
-              <div className="text-5xl font-bold font-mono mb-4 text-gray-300">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold font-mono mb-4 text-gray-300">
                 <TypingText text="Hello(); I'm" delay={0.2} />
               </div>
-              <div className="text-7xl font-bold mb-8 bg-linear-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
+              <div className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 md:mb-8 bg-linear-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
                 <TypingText text="S P Darshan" delay={0.8} />
               </div>
               <motion.div
-                className="text-5xl font-bold text-white mb-12"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 md:mb-12"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 2.2 }}
@@ -62,7 +62,7 @@ export default function Home({ onOpenContact }) {
                 I transform ideas<br />to &lt;code/&gt;.
               </motion.div>
               <motion.div
-                className="text-xl  text-bold gray-300 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-bold gray-300 leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 3.2 }}
@@ -70,7 +70,7 @@ export default function Home({ onOpenContact }) {
                 A passionate developer dedicated to crafting elegant solutions. Building digital experiences that matter.
               </motion.div>
               <motion.div
-                className="mt-8 flex items-center gap-4"
+                className="mt-8 flex flex-wrap items-center gap-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 3.8, ease: 'easeOut' }}
@@ -103,11 +103,11 @@ export default function Home({ onOpenContact }) {
 
             {/* Image */}
             <div className="flex-1 flex justify-center">
-              <div className="image-frame -mt-18 -mr-16">
+              <div className="image-frame mt-4 md:-mt-18 md:-mr-16">
                 <motion.img
                   src={profileImage}
                   alt="Profile"
-                  className="w-80 h-80 rounded-lg object-cover transition-transform duration-300"
+                  className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-lg object-cover transition-transform duration-300"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 1.2 }}

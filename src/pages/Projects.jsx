@@ -140,20 +140,20 @@ export default function Projects() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: false, amount: 0.3 }}
-      className="text-white py-24 flex justify-center scroll-mt-12"
+      className="text-white py-16 md:py-24 flex justify-center scroll-mt-12"
     >
-      <div className="w-full max-w-6xl px-8">
+      <div className="w-full max-w-6xl px-4 sm:px-6 md:px-8">
 
         {/* Title */}
-        <div className="flex items-center gap-4 mb-12">
-          <h1 className="text-4xl font-bold font-mono">My Projects</h1>
-          <div className="w-85 border-t-4 border-dashed border-green-400"></div>
+        <div className="flex items-center gap-4 mb-8 md:mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold font-mono">My Projects</h1>
+          <div className="hidden md:block w-85 border-t-4 border-dashed border-green-400"></div>
         </div>
 
         {/* Featured Project */}
         <motion.div
           whileHover={{ scale: 1.02 }}
-          className="group grid md:grid-cols-2 gap-8 mb-16 border border-white/10 bg-white/3 rounded-lg p-4  transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50"
+          className="group grid md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16 border border-white/10 bg-white/3 rounded-lg p-4 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50"
         >
           {/* Image */}
           <div className="overflow-hidden rounded-xl">
@@ -166,7 +166,7 @@ export default function Projects() {
 
           {/* Content */}
           <div className="flex flex-col justify-center">
-            <h2 className="text-3xl font-bold mb-3 transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)]">{featured.title}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)]">{featured.title}</h2>
             <p className="text-gray-300 mb-4">{featured.desc}</p>
 
             {/* Tech */}
@@ -177,7 +177,7 @@ export default function Projects() {
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3 md:gap-4">
               {hasValidLink(featured.live) && (
                 <a
                   href={featured.live}
@@ -208,7 +208,7 @@ export default function Projects() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="group border border-white/10 bg-white/3 rounded-lg p-4 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 min-h-[430px] flex flex-col"
+              className="group border border-white/10 bg-white/3 rounded-lg p-4 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 md:min-h-[430px] flex flex-col"
             >
               {/* Image */}
               <div className="overflow-hidden">
@@ -221,7 +221,7 @@ export default function Projects() {
 
               {/* Content */}
               <div className="p-4 flex flex-col flex-1">
-                <h3 className="text-2xl font-semibold mb-2 whitespace-pre-line transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)]">
+                <h3 className="text-xl md:text-2xl font-semibold mb-2 whitespace-pre-line transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)]">
                   {project.title}
                 </h3>
                 <p className="text-gray-400 text-md mb-4">
