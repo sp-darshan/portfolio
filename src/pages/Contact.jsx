@@ -17,7 +17,11 @@ export default function Contact({ onOpenContact }) {
           Have an idea or opportunity in mind? Let’s connect and bring it to life.
         </p>
 
-        <div className="mt-12">
+        <motion.div
+          className="mt-12"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 1.0, ease: 'easeInOut' }}
+        >
           <button
             onClick={onOpenContact}
             className="group inline-flex items-center font-mono gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-2.5 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-green-300/70 hover:bg-white/10"
@@ -25,7 +29,7 @@ export default function Contact({ onOpenContact }) {
             Let's Connect
             <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </button>
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );

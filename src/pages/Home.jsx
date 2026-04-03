@@ -75,12 +75,16 @@ export default function Home({ onOpenContact }) {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 3.8, ease: 'easeOut' }}
               >
-                <div className="relative inline-block border-2 border-green-400 rounded-lg p-1 bg-black/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-white/50">
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 1.0, ease: 'easeInOut' }}
+                  className="relative inline-block border-2 border-green-400 rounded-lg p-1 bg-black/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-white/50"
+                >
                   <button onClick={onOpenContact} className="px-3 py-1 text-xs text-green-400 font-bold transition-all duration-300 hover:text-green-300">
                     Let's Connect
                   </button>
                   <div className="absolute -bottom-2 left-4 w-4 h-4 bg-black border-2 border-green-400 border-t-0 border-l-0 transform rotate-45"></div>
-                </div>
+                </motion.div>
 
                 <a
                   href={resume}
