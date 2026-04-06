@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import navImage from '../assets/images/Nav.png';
 
-const sections = ['home', 'about', 'education', 'projects', 'skills', 'certifications', 'contact'];
+const sections = ['home', 'about', 'education', 'projects', 'skills', 'certifications', 'publications', 'contact'];
 
 export default function Header({ onContactClick }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -61,7 +61,7 @@ export default function Header({ onContactClick }) {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-2"
     >
-      <div className="relative w-full max-w-6xl px-3 md:px-6">
+      <div className="relative w-full max-w-7xl px-3 md:px-6">
         <nav className="backdrop-blur-md bg-white/10 text-white border border-white/20 rounded-3xl px-4 md:px-8 py-0 flex justify-between items-center shadow-lg overflow-hidden">
           <motion.div
             onHoverStart={() => setIsHovered(true)}

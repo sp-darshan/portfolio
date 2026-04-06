@@ -7,6 +7,7 @@ import Contact from './Contact';
 import Education from './Education';
 import Skills from './Skills';
 import Projects from './Projects';
+import Publications from './Publications';
 import BackToTop from '../components/BackToTop';
 import resume from '../assets/Resume/MR.pdf'
 
@@ -136,6 +137,9 @@ export default function Home({ onOpenContact }) {
 
       {/* Certifications Section */}
       <Certifications />
+
+      {/* Publications Section */}
+      <Publications />
 
       {/* Contact Section */}
       <Contact onOpenContact={onOpenContact} />
