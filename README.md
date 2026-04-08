@@ -4,7 +4,7 @@ Personal portfolio website built with React and Vite.
 
 ## Features
 
-- Responsive single-page layout
+- Responsive single page layout
 - About, skills, education, projects, publications, certifications, and contact sections
 - Contact form powered by EmailJS
 - Smooth UI animations with Framer Motion
