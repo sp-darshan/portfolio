@@ -2,19 +2,27 @@ import { motion } from 'framer-motion';
 import { FiCode, FiExternalLink } from 'react-icons/fi';
 import { SiPython } from 'react-icons/si';
 import { TbCode } from 'react-icons/tb';
+import awsccp from '../assets/images/aws-certified-cloud-practitioner.png';
 
 const certifications = [
   {
-    title: 'The Complete Python Bootcamp From Zero to Hero in Python',
-    credentialLink: 'https://www.udemy.com/certificate/UC-0d45d3f6-077a-4ee7-872e-b92881f63576/',
-    issuer: 'Udemy',
-    Icon: SiPython,
-  },
+    title: 'AWS Certified Cloud Practioner',
+    credentialLink: 'https://www.credly.com/badges/f83c5861-d227-46b0-9c6d-d953b67a1789/public_url',
+    issuer: 'Amazon Web Services',
+    image: awsccp,
+    imageAlt: 'AWS Certified Cloud Practitioner badge',
+  },  
   {
     title: 'The Complete Full-Stack Web Development Bootcamp',
     credentialLink: 'https://www.udemy.com/certificate/UC-da58e52b-9e5e-4840-b92c-c5e7f1a687ea/',
     issuer: 'Udemy',
     Icon: TbCode,
+  },
+  {
+    title: 'The Complete Python Bootcamp From Zero to Hero in Python',
+    credentialLink: 'https://www.udemy.com/certificate/UC-0d45d3f6-077a-4ee7-872e-b92881f63576/',
+    issuer: 'Udemy',
+    Icon: SiPython,
   },
 ];
 
@@ -43,7 +51,16 @@ export default function Certifications() {
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex flex-col items-start">
-                  <cert.Icon className="text-5xl text-green-300" aria-hidden="true" />
+                  {cert.image ? (
+                    <img
+                      src={cert.image}
+                      alt={cert.imageAlt}
+                      className="h-16 w-16 object-contain scale-110"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <cert.Icon className="text-5xl text-green-300" aria-hidden="true" />
+                  )}
                   <span className="text-xs text-gray-400 mt-1">{cert.issuer}</span>
                 </div>
                 <a
@@ -60,9 +77,7 @@ export default function Certifications() {
               <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">
                 {cert.title}
               </h3>
-
-              
-
+        
             </motion.div>
           ))}
         </div>
