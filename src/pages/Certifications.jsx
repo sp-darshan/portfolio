@@ -55,7 +55,7 @@ export default function Certifications() {
                     <img
                       src={cert.image}
                       alt={cert.imageAlt}
-                      className="h-16 w-16 object-contain scale-110"
+                      className="h-16 w-16 object-contain scale-110 mb-1"
                       loading="lazy"
                     />
                   ) : (
