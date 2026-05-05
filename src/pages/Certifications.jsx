@@ -77,7 +77,6 @@ export default function Certifications() {
               <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">
                 {cert.title}
               </h3>
-        
             </motion.div>
           ))}
         </div>
