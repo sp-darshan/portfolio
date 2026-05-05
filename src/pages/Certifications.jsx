@@ -6,7 +6,7 @@ import awsccp from '../assets/images/aws-certified-cloud-practitioner.png';
 
 const certifications = [
   {
-    title: 'AWS Certified Cloud Practioner',
+    title: 'AWS Certified Cloud Practitioner',
     credentialLink: 'https://www.credly.com/badges/f83c5861-d227-46b0-9c6d-d953b67a1789/public_url',
     issuer: 'Amazon Web Services',
     image: awsccp,
