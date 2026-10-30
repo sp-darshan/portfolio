@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FiDownload } from 'react-icons/fi';
 import profileImage from '../assets/images/Profile.webp';
 import About from './About';
+import Experience from './Experience';
 import Certifications from './Certifications';
 import Contact from './Contact';
 import Education from './Education';
@@ -9,7 +10,7 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Publications from './Publications';
 import BackToTop from '../components/BackToTop';
-import resume from '../assets/Resume/MR.pdf'
+import resume from '../assets/Resume/MR.pdf';
 
 const TypingText = ({ text, delay = 0 }) => {
   const characters = text.split('');
@@ -125,6 +126,9 @@ export default function Home({ onOpenContact }) {
 
       {/* About Section */}
       <About />
+
+      {/* Experience Section */}
+      <Experience />
 
       {/* Education Section */}
       <Education />

@@ -22,23 +22,35 @@ import {
   SiTailwindcss,
   SiTensorflow,
   SiVercel,
+  SiRedis,
+  SiSupabase,
+  SiPrisma,
 } from 'react-icons/si';
 import { FaChartLine, FaMicrochip, FaRobot } from 'react-icons/fa6';
 import { FiCode, FiExternalLink, FiGithub } from 'react-icons/fi';
 import rr from '../assets/images/RR.png'
+import ft from '../assets/images/FT.png'
 import ctf from '../assets/images/CTF.png'
 import st from '../assets/images/ST.png'
 import hr from '../assets/images/hr.jpg'
 
 const projects = [
   {
+    title: "Finatle",
+    desc: "Finatle is a personal finance management platform for tracking income and expenses, managing budgets, monitoring loans, splitting bills, and scanning receipts, helping users make smarter financial decisions through an intuitive web and mobile experience.",
+    tech: ["React", "Node.js", "Express", "PostgreSQL", "Redis", "Supabase", "Prisma", "Gemini API"],
+    image: ft,
+    github: "https://github.com/sp-darshan/Finatle",
+    live: "https://finatle.vercel.app/",
+    featured: true,
+  },
+  {
     title: "Resume Ranker",
     desc: "Built an AI-powered resume analysis platform that evaluates resumes using ATS scoring, keyword optimization and job description matching. Provides actionable feedback, skill gap insights and personalized improvement suggestions using Gemini API.",
-    tech: ["React.js", "Tailwind CSS", "Framer motion", "Node.js", "Express.js","Mongodb", "Razorpay", "Gemini API"],
+    tech: ["React.js", "Tailwind CSS", "Framer motion", "Node.js", "Express.js", "Mongodb", "Razorpay", "Gemini API"],
     image: rr,
     github: "https://github.com/sp-darshan/Resume-Ranker",
     live: "https://resume-ranker-ind.vercel.app/",
-    featured: true,
   },
   {
     title: "Smart Toll system\nusing Xbee",
@@ -48,18 +60,18 @@ const projects = [
     github: "https://github.com/lithigesh/smart-toll",
     live: "https://smart-toll.vercel.app/",
   },
-  {
-    title: "Capture the Flag",
-    desc: "Developed an interactive Capture The Flag simulation where autonomous robots compete in real time. Leveraged WebSockets for seamless communication, enabling synchronized decision making, dynamic gameplay and efficient event handling, while demonstrating distributed system design, real time coordination and intelligent agent behavior in a scalable virtual environment.",
-    tech: ["Webots", "Python", "Node.js", "Websockets", "Render", "Vercel"],
-    image: ctf,
-    github: "https://github.com/sp-darshan/CTF-game",
-    live: "#"
-  },
+  // {
+  //   title: "Capture the Flag",
+  //   desc: "Developed an interactive Capture The Flag simulation where autonomous robots compete in real time. Leveraged WebSockets for seamless communication, enabling synchronized decision making, dynamic gameplay and efficient event handling, while demonstrating distributed system design, real time coordination and intelligent agent behavior in a scalable virtual environment.",
+  //   tech: ["Webots", "Python", "Node.js", "Websockets", "Render", "Vercel"],
+  //   image: ctf,
+  //   github: "https://github.com/sp-darshan/CTF-game",
+  //   live: "#"
+  // },
   {
     title: "ECG based Arrhythmia Classification",
     desc: "Developed a system to analyze ECG heart rhythm patterns for early arrhythmia detection, focusing on accurate classification, robust preprocessing and meaningful insights to improve cardiac screening quality, enhance consistency and reduce manual interpretation effort significantly for clinicians.",
-    tech: ["Python", "pandas", "NumPy", "Scikit-Learn","Matplotlib", "Seaborn", "TensorFlow", "PyTorch"],
+    tech: ["Python", "pandas", "NumPy", "Scikit-Learn", "Matplotlib", "Seaborn", "TensorFlow", "PyTorch"],
     image: hr,
     github: "https://github.com/Sriharish-V-J/Machine-Learning",
     live: "#",
@@ -67,6 +79,9 @@ const projects = [
 ];
 
 const techIconMap = {
+  prisma: SiPrisma,
+  supabase: SiSupabase,
+  redis: SiRedis,
   react: SiReact,
   'react.js': SiReact,
   tailwind: SiTailwindcss,

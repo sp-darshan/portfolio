@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import navImage from '../assets/images/Nav.png';
 
-const sections = ['home', 'about', 'education', 'projects', 'skills', 'certifications', 'publications', 'contact'];
+const sections = ['home', 'about', 'experience', 'education', 'projects', 'skills', 'certifications', 'publications', 'contact'];
 
 export default function Header({ onContactClick }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -61,13 +61,13 @@ export default function Header({ onContactClick }) {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-2"
     >
-      <div className="relative w-full max-w-7xl px-3 md:px-6">
+      <div className="relative w-full max-w-[85rem] px-3 md:px-6">
         <nav className="backdrop-blur-md bg-white/10 text-white border border-white/20 rounded-3xl px-4 md:px-8 py-0 flex justify-between items-center shadow-lg overflow-hidden">
           <motion.div
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
             onClick={() => scrollToSection('home')}
-            className="relative cursor-pointer flex items-center gap-2 shrink-0"
+            className="relative cursor-pointer flex items-center gap-2 shrink-0 mr-10 md:mr-12 lg:mr-14"
             animate={{ scale: isHovered ? 1.05 : 1 }}
             transition={{ duration: 0.3 }}
           >
@@ -86,7 +86,7 @@ export default function Header({ onContactClick }) {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -10 }}
-                className="absolute left-full top-1/2 ml-1 -translate-y-1/2 rounded-md border border-green-400/70 bg-black/90 px-2 py-0.5 text-sm font-bold text-green-400 leading-none shadow-[0_0_10px_rgba(74,222,128,0.25)]"
+                className="absolute left-full top-1/2 ml-1.5 -translate-y-1/2 rounded-md border border-green-400/70 bg-black/90 px-2 py-0.5 text-sm font-bold text-green-400 leading-none shadow-[0_0_10px_rgba(74,222,128,0.25)] pointer-events-none z-10"
               >
                 Hi
                 <div className="absolute -left-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rotate-45 border-b border-l border-green-400/70 bg-black/90" />
@@ -94,12 +94,12 @@ export default function Header({ onContactClick }) {
             )}
           </motion.div>
 
-          <div className="hidden md:flex gap-3 lg:gap-6">
+          <div className="hidden md:flex gap-1.5 lg:gap-4 xl:gap-6">
             {sections.map((sectionId) => (
               <button
                 key={sectionId}
                 onClick={sectionId === 'contact' ? handleContactClick : () => scrollToSection(sectionId)}
-                className="font-bold transition cursor-pointer px-2 lg:px-3 py-1 rounded text-white flex items-center gap-2 capitalize"
+                className="font-bold transition cursor-pointer px-1.5 lg:px-3 py-1 rounded text-white text-xs lg:text-sm xl:text-base flex items-center gap-1.5 lg:gap-2 capitalize whitespace-nowrap"
               >
                 {activeSection === sectionId && <span className="w-2 h-2 bg-green-400 rounded-full" />}
                 {sectionId}
@@ -127,12 +127,13 @@ export default function Header({ onContactClick }) {
               className="md:hidden absolute left-3 right-3 mt-2 rounded-2xl border border-white/15 bg-black/90 backdrop-blur-md p-3"
             >
               <div className="grid grid-cols-2 gap-2">
-                {sections.map((sectionId) => (
+                {sections.map((sectionId, index) => (
                   <button
                     key={sectionId}
                     type="button"
                     onClick={sectionId === 'contact' ? handleContactClick : () => scrollToSection(sectionId)}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white capitalize"
+                    className={`inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white capitalize ${index === sections.length - 1 && sections.length % 2 !== 0 ? 'col-span-2' : ''
+                      }`}
                   >
                     {activeSection === sectionId && <span className="w-2 h-2 bg-green-400 rounded-full" />}
                     {sectionId}
