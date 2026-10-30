@@ -99,7 +99,7 @@ export default function Header({ onContactClick }) {
               <button
                 key={sectionId}
                 onClick={sectionId === 'contact' ? handleContactClick : () => scrollToSection(sectionId)}
-                className="font-bold transition cursor-pointer px-1.5 lg:px-3 py-1 rounded text-white text-xs lg:text-sm xl:text-base flex items-center gap-1.5 lg:gap-2 capitalize whitespace-nowrap"
+                className="font-bold transition cursor-pointer px-1.5 lg:px-3 py-1 rounded text-white text-xs lg:text-sm xl:text-base flex items-center gap-1.5 lg:gap-2 capitalize whitespace-nowrap hover:text-green-300 active:text-green-300 active:scale-95"
               >
                 {activeSection === sectionId && <span className="w-2 h-2 bg-green-400 rounded-full" />}
                 {sectionId}
@@ -110,7 +110,7 @@ export default function Header({ onContactClick }) {
           <button
             type="button"
             onClick={() => setIsMenuOpen((currentState) => !currentState)}
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-white"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-white active:bg-white/20 active:scale-95 transition-all cursor-pointer"
             aria-label="Toggle navigation menu"
           >
             {isMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
@@ -132,7 +132,7 @@ export default function Header({ onContactClick }) {
                     key={sectionId}
                     type="button"
                     onClick={sectionId === 'contact' ? handleContactClick : () => scrollToSection(sectionId)}
-                    className={`inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white capitalize ${index === sections.length - 1 && sections.length % 2 !== 0 ? 'col-span-2' : ''
+                    className={`inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white capitalize transition-all active:bg-white/20 active:border-green-400 active:scale-95 cursor-pointer ${index === sections.length - 1 && sections.length % 2 !== 0 ? 'col-span-2' : ''
                       }`}
                   >
                     {activeSection === sectionId && <span className="w-2 h-2 bg-green-400 rounded-full" />}

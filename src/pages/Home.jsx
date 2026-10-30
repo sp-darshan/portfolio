@@ -80,9 +80,9 @@ export default function Home({ onOpenContact }) {
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 1.0, ease: 'easeInOut' }}
-                  className="relative inline-block border-2 border-green-400 rounded-lg p-1 bg-black/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-white/50"
+                  className="relative inline-block border-2 border-green-400 rounded-lg p-1 bg-black/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-white/50 active:scale-105 active:shadow-lg active:shadow-white/50 cursor-pointer"
                 >
-                  <button onClick={onOpenContact} className="px-3 py-1 text-xs text-green-400 font-bold transition-all duration-300 hover:text-green-300">
+                  <button onClick={onOpenContact} className="px-3 py-1 text-xs text-green-400 font-bold transition-all duration-300 hover:text-green-300 active:text-green-300 cursor-pointer">
                     Let's Connect
                   </button>
                   <div className="absolute -bottom-2 left-4 w-4 h-4 bg-black border-2 border-green-400 border-t-0 border-l-0 transform rotate-45"></div>
@@ -92,7 +92,7 @@ export default function Home({ onOpenContact }) {
                   href={resume}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border-2 border-green-400 bg-green-400 px-3 py-2 text-xs font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-green-300"
+                  className="inline-flex items-center gap-2 rounded-lg border-2 border-green-400 bg-green-400 px-3 py-2 text-xs font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-green-300 active:scale-105 active:bg-green-300 cursor-pointer"
                 >
                   <motion.span
                     aria-hidden="true"
@@ -109,7 +109,7 @@ export default function Home({ onOpenContact }) {
 
             {/* Image */}
             <div className="flex-1 flex justify-center">
-              <div className="image-frame mt-4 md:-mt-18 md:-mr-16">
+              <div className="image-frame cursor-pointer mt-4 md:-mt-18 md:-mr-16">
                 <motion.img
                   src={profileImage}
                   alt="S P Darshan portrait"

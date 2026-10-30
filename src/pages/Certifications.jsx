@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiCode, FiExternalLink } from 'react-icons/fi';
+import { FiExternalLink } from 'react-icons/fi';
 import { SiPython } from 'react-icons/si';
 import { TbCode } from 'react-icons/tb';
 import awsccp from '../assets/images/aws-certified-cloud-practitioner.png';
@@ -47,7 +47,8 @@ export default function Certifications() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.02 }}
-              className="group border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl p-6 transition-all duration-300 hover:border-green-400/40 hover:shadow-[0_0_20px_rgba(74,222,128,0.15)]"
+              whileTap={{ scale: 1.02 }}
+              className="group cursor-pointer border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl p-6 transition-all duration-300 hover:border-green-400/40 hover:shadow-[0_0_20px_rgba(74,222,128,0.15)] active:border-green-400/40 active:shadow-[0_0_20px_rgba(74,222,128,0.2)]"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex flex-col items-start">
@@ -67,14 +68,14 @@ export default function Certifications() {
                   href={cert.credentialLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-300 hover:text-green-200 transition-colors"
+                  className="text-green-300 hover:text-green-200 active:text-green-200 transition-colors"
                   title="View Credential"
                 >
                   <FiExternalLink size={20} aria-hidden="true" />
                 </a>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 group-active:text-green-300 transition-colors">
                 {cert.title}
               </h3>
             </motion.div>

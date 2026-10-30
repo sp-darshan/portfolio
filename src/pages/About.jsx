@@ -26,7 +26,11 @@ export default function About() {
           </div>
           <div className='flex-1 flex flex-col gap-4 md:gap-6 justify-center'>
             {/* Full Stack Development Card */}
-            <div className="bg-white/3 border border-white/10 border-opacity-30 rounded-xl p-5 md:p-6 cursor-pointer transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 hover:border-opacity-60">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 1.05 }}
+              className="bg-white/3 border border-white/10 border-opacity-30 rounded-xl p-5 md:p-6 cursor-pointer transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 hover:border-opacity-60 active:scale-105 active:shadow-lg active:shadow-green-400/50 active:border-opacity-60"
+            >
               <div className="flex items-center gap-4">
                 <div className="text-green-400 text-5xl">
                   <FaLaptopCode />
@@ -36,10 +40,14 @@ export default function About() {
                   <p className="text-gray-400 text-sm mt-1">Building complete web applications</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* ML Card */}
-            <div className="bg-white/3 border border-white/10 border-opacity-30 rounded-xl p-5 md:p-6 cursor-pointer transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 hover:border-opacity-60">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 1.05 }}
+              className="bg-white/3 border border-white/10 border-opacity-30 rounded-xl p-5 md:p-6 cursor-pointer transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 hover:border-opacity-60 active:scale-105 active:shadow-lg active:shadow-green-400/50 active:border-opacity-60"
+            >
               <div className="flex items-center gap-4">
                 <div className="text-green-400 text-5xl">
                   <FaBrain />
@@ -49,7 +57,7 @@ export default function About() {
                   <p className="text-gray-400 text-sm mt-1">Designing adaptive intelligent systems</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
         

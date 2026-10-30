@@ -40,7 +40,8 @@ export default function Experience() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.02 }}
-              className="group border border-white/10 bg-white/3 rounded-xl p-5 md:p-6 transition-all hover:shadow-lg hover:shadow-green-400/50"
+              whileTap={{ scale: 1.02 }}
+              className="group cursor-pointer border border-white/10 bg-white/3 rounded-xl p-5 md:p-6 transition-all hover:shadow-lg hover:shadow-green-400/50 active:shadow-lg active:shadow-green-400/50"
             >
               <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
                 {/* Organization Logo (Free form without borders/box) */}
@@ -56,7 +57,7 @@ export default function Experience() {
                 <div className="flex-1 w-full">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
                     <div>
-                      <h2 className="text-xl md:text-2xl font-bold text-white transition-colors duration-300 group-hover:text-green-400">
+                      <h2 className="text-xl md:text-2xl font-bold text-white transition-colors duration-300 group-hover:text-green-400 group-active:text-green-400">
                         {exp.role}
                       </h2>
                       <p className="text-base md:text-lg font-semibold text-gray-300 mt-0.5">
@@ -96,7 +97,7 @@ export default function Experience() {
                       {exp.skills.map((skill, skillIdx) => (
                         <span
                           key={skillIdx}
-                          className="inline-flex items-center rounded-full border border-green-400/30 bg-green-500/10 px-3 py-1 text-xs text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 hover:shadow-[0_2px_8px_rgba(255,255,255,0.18)]"
+                          className="inline-flex items-center rounded-full border border-green-400/30 bg-green-500/10 px-3 py-1 text-xs text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 hover:shadow-[0_2px_8px_rgba(255,255,255,0.18)] active:-translate-y-0.5 active:border-white/60 active:bg-white/10 active:shadow-[0_2px_8px_rgba(255,255,255,0.18)]"
                         >
                           {skill}
                         </span>

@@ -132,7 +132,7 @@ function TechBadge({ label, compact = false }) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-full border border-green-400/30 bg-green-500/10 text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 hover:shadow-[0_2px_8px_rgba(255,255,255,0.18)] ${compact ? 'px-2 py-1 text-xs' : 'px-3 py-1 text-sm'}`}
+      className={`inline-flex items-center gap-1 rounded-full border border-green-400/30 bg-green-500/10 text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 hover:shadow-[0_2px_8px_rgba(255,255,255,0.18)] active:-translate-y-0.5 active:border-white/60 active:bg-white/10 active:shadow-[0_2px_8px_rgba(255,255,255,0.18)] ${compact ? 'px-2 py-1 text-xs' : 'px-3 py-1 text-sm'}`}
     >
       <Icon className={compact ? 'text-sm' : 'text-base'} aria-hidden="true" />
       <span>{label}</span>
@@ -166,56 +166,61 @@ export default function Projects() {
         </div>
 
         {/* Featured Project */}
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          className="group grid md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16 border border-white/10 bg-white/3 rounded-lg p-4 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50"
-        >
-          {/* Image */}
-          <div className="overflow-hidden rounded-xl">
-            <img
-              src={featured.image}
-              alt={featured.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="flex flex-col justify-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)]">{featured.title}</h2>
-            <p className="text-gray-300 mb-4">{featured.desc}</p>
-
-            {/* Tech */}
-            <div className="flex flex-wrap gap-2 mb-4">
-              {featured.tech.map((t, i) => (
-                <TechBadge key={i} label={t} />
-              ))}
+        {featured && (
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 1.02 }}
+            className="group cursor-pointer grid md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16 border border-white/10 bg-white/3 rounded-lg p-4 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 active:scale-102 active:shadow-lg active:shadow-green-400/50"
+          >
+            {/* Image */}
+            <div className="overflow-hidden rounded-xl">
+              <img
+                src={featured.image}
+                alt={featured.title}
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-3 md:gap-4">
-              {hasValidLink(featured.live) && (
+            {/* Content */}
+            <div className="flex flex-col justify-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)] group-active:text-green-400">
+                {featured.title}
+              </h2>
+              <p className="text-gray-300 mb-4">{featured.desc}</p>
+
+              {/* Tech */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {featured.tech.map((t, i) => (
+                  <TechBadge key={i} label={t} />
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-wrap gap-3 md:gap-4">
+                {hasValidLink(featured.live) && (
+                  <a
+                    href={featured.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/70 text-black rounded-lg font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-green-300 hover:shadow-[0_2px_8px_rgba(34,197,94,0.18)] active:-translate-y-0.5 active:bg-green-300 active:shadow-[0_2px_8px_rgba(34,197,94,0.18)]"
+                  >
+                    <FiExternalLink aria-hidden="true" />
+                    Live
+                  </a>
+                )}
                 <a
-                  href={featured.live}
+                  href={featured.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/70 text-black rounded-lg font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-green-300 hover:shadow-[0_2px_8px_rgba(34,197,94,0.18)]"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-green-400/70 text-green-300 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-400/10 hover:shadow-[0_2px_8px_rgba(34,197,94,0.16)] active:-translate-y-0.5 active:border-green-300 active:bg-green-400/10 active:shadow-[0_2px_8px_rgba(34,197,94,0.16)]"
                 >
-                  <FiExternalLink aria-hidden="true" />
-                  Live
+                  <FiGithub aria-hidden="true" />
+                  GitHub
                 </a>
-              )}
-              <a
-                href={featured.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-green-400/70 text-green-300 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-400/10 hover:shadow-[0_2px_8px_rgba(34,197,94,0.16)]"
-              >
-                <FiGithub aria-hidden="true" />
-                GitHub
-              </a>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
 
         {/* ⚡ Other Projects Grid */}
         <div className="grid md:grid-cols-3 gap-8">
@@ -223,20 +228,21 @@ export default function Projects() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="group border border-white/10 bg-white/3 rounded-lg p-4 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 md:min-h-[430px] flex flex-col"
+              whileTap={{ scale: 1.03 }}
+              className="group cursor-pointer border border-white/10 bg-white/3 rounded-lg p-4 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 active:scale-103 active:shadow-lg active:shadow-green-400/50 md:min-h-[430px] flex flex-col"
             >
               {/* Image */}
               <div className="overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-40 object-cover hover:scale-110 transition duration-500"
+                  className="w-full h-40 object-cover hover:scale-110 active:scale-110 transition duration-500"
                 />
               </div>
 
               {/* Content */}
               <div className="p-4 flex flex-col flex-1">
-                <h3 className="text-xl md:text-2xl font-semibold mb-2 whitespace-pre-line transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)]">
+                <h3 className="text-xl md:text-2xl font-semibold mb-2 whitespace-pre-line transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)] group-active:text-green-400">
                   {project.title}
                 </h3>
                 <p className="text-gray-400 text-md mb-4">
@@ -257,7 +263,7 @@ export default function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-400/70 text-black text-sm rounded-lg font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-green-300 hover:shadow-[0_2px_8px_rgba(34,197,94,0.18)]"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-400/70 text-black text-sm rounded-lg font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-green-300 hover:shadow-[0_2px_8px_rgba(34,197,94,0.18)] active:-translate-y-0.5 active:bg-green-300 active:shadow-[0_2px_8px_rgba(34,197,94,0.18)]"
                     >
                       <FiExternalLink aria-hidden="true" />
                       Live
@@ -267,7 +273,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-green-400/70 text-green-300 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-400/10 hover:shadow-[0_2px_8px_rgba(34,197,94,0.16)]"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-green-400/70 text-green-300 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-400/10 hover:shadow-[0_2px_8px_rgba(34,197,94,0.16)] active:-translate-y-0.5 active:border-green-300 active:bg-green-400/10 active:shadow-[0_2px_8px_rgba(34,197,94,0.16)]"
                   >
                     <FiGithub aria-hidden="true" />
                     GitHub
@@ -284,7 +290,7 @@ export default function Projects() {
             href="https://github.com/sp-darshan"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/70 text-black rounded-lg font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-green-300 hover:shadow-[0_2px_8px_rgba(34,197,94,0.18)]"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/70 text-black rounded-lg font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-green-300 hover:shadow-[0_2px_8px_rgba(34,197,94,0.18)] active:-translate-y-0.5 active:bg-green-300 active:shadow-[0_2px_8px_rgba(34,197,94,0.18)]"
           >
             <FiGithub aria-hidden="true" />
             View More on GitHub

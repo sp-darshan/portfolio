@@ -82,8 +82,9 @@ export default function Skills() {
           {skills.map(({ name, Icon }) => (
             <motion.div
               key={name}
-              whileHover={{ y: -4 }}
-              className="h-28 rounded-2xl border border-white/10 bg-white/3 p-3 text-center flex flex-col items-center justify-center transition-all duration-300 hover:border-green-400/40 hover:shadow-[0_0_16px_rgba(74,222,128,0.16)]"
+              whileHover={{ y: -4, scale: 1.04 }}
+              whileTap={{ y: -4, scale: 0.96 }}
+              className="cursor-pointer h-28 rounded-2xl border border-white/10 bg-white/3 p-3 text-center flex flex-col items-center justify-center transition-all duration-300 hover:border-green-400/40 hover:shadow-[0_0_16px_rgba(74,222,128,0.2)] active:border-green-400/40 active:shadow-[0_0_16px_rgba(74,222,128,0.25)]"
             >
               <Icon className="text-5xl text-green-300 mb-2" aria-hidden="true" />
               <span className="text-[11px] leading-tight text-gray-200 font-medium">{name}</span>

@@ -45,7 +45,9 @@ body::-webkit-scrollbar {
 }
 
 .image-frame:hover::before,
-.image-frame:hover::after {
+.image-frame:hover::after,
+.image-frame:active::before,
+.image-frame:active::after {
   opacity: 1;
 }
 
@@ -54,7 +56,8 @@ body::-webkit-scrollbar {
   transition: transform 0.4s ease;
 }
 
-.image-frame:hover img {
+.image-frame:hover img,
+.image-frame:active img {
   transform: scale(1.08) translateZ(20px);
 }
 
@@ -101,11 +104,13 @@ body::-webkit-scrollbar {
   font-family: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
 }
 
-.back-to-top:hover {
+.back-to-top:hover,
+.back-to-top:active {
   transform: translateY(-4px);
 }
 
-.back-to-top:hover .back-to-top-text {
+.back-to-top:hover .back-to-top-text,
+.back-to-top:active .back-to-top-text {
   letter-spacing: 3px;
 }
 
@@ -114,4 +119,3 @@ body::-webkit-scrollbar {
     display: none !important;
   }
 }
-

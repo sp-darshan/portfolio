@@ -20,7 +20,11 @@ export default function Education() {
         </div>
         <div className='w-full flex flex-col md:flex-row gap-5 md:gap-6'>
           {/* Education Card 1 */}
-          <div className="group flex-1 flex gap-4 md:gap-6 bg-white/3 rounded-lg p-4 border border-white/10 border-opacity-30 hover:border-opacity-60 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50">
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 1.03 }}
+            className="group cursor-pointer flex-1 flex gap-4 md:gap-6 bg-white/3 rounded-lg p-4 border border-white/10 border-opacity-30 hover:border-opacity-60 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 active:scale-105 active:shadow-lg active:shadow-green-400/50"
+          >
             {/* Image Section */}
             <div className="w-20 h-20 md:w-1/6 md:h-24 bg-gray-800 rounded-lg shrink-0 flex items-center justify-center">
               <img 
@@ -32,13 +36,19 @@ export default function Education() {
             
             {/* Content Section */}
             <div className="flex-1">
-              <h2 className="text-base md:text-lg font-bold text-white mb-1 transition-colors duration-300 group-hover:text-green-400">B.Tech in Computer Communication Engineering <span className="text-sm text-green-400 font-mono transition-colors duration-300 group-hover:text-white"> | 2023 - present</span></h2>
+              <h2 className="text-base md:text-lg font-bold text-white mb-1 transition-colors duration-300 group-hover:text-green-400 group-active:text-green-400">
+                B.Tech in Computer Communication Engineering <span className="text-sm text-green-400 font-mono transition-colors duration-300 group-hover:text-white group-active:text-white"> | 2023 - present</span>
+              </h2>
               <p className="text-sm font-bold text-gray-300">Amrita vishwa vidyapeetham, Coimbatore, India</p>
-
             </div>
-          </div>
+          </motion.div>
 
-          <div className="group flex-1 flex gap-4 md:gap-6 bg-white/3 rounded-lg p-4 border border-white/10 border-opacity-30 hover:border-opacity-60 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50">
+          {/* Education Card 2 */}
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 1.03 }}
+            className="group cursor-pointer flex-1 flex gap-4 md:gap-6 bg-white/3 rounded-lg p-4 border border-white/10 border-opacity-30 hover:border-opacity-60 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 active:scale-105 active:shadow-lg active:shadow-green-400/50"
+          >
             {/* Image Section */}
             <div className="w-20 h-20 md:w-1/6 md:h-24 bg-gray-800 rounded-lg shrink-0 flex items-center justify-center">
               <img 
@@ -50,10 +60,12 @@ export default function Education() {
             
             {/* Content Section */}
             <div className="flex-1">
-              <h2 className="text-base md:text-lg font-bold text-white mb-3 md:mb-8 transition-colors duration-300 group-hover:text-green-400">High School Diplomo<span className="text-sm text-green-400 font-mono transition-colors duration-300 group-hover:text-white"> | 2021 - 2023</span></h2>
+              <h2 className="text-base md:text-lg font-bold text-white mb-3 md:mb-8 transition-colors duration-300 group-hover:text-green-400 group-active:text-green-400">
+                High School Diplomo<span className="text-sm text-green-400 font-mono transition-colors duration-300 group-hover:text-white group-active:text-white"> | 2021 - 2023</span>
+              </h2>
               <p className="text-sm font-bold text-gray-300">Sri Chaitanya techno school, Coimbatore, Tamilnadu, India</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>

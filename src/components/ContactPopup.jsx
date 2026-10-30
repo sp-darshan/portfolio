@@ -33,8 +33,8 @@ const itemVariants = {
   hidden: { opacity: 0, y: 14, scale: 0.96 },
   visible: {
     opacity: 1,
-    y: 0,
     scale: 1,
+    y: 0,
     transition: {
       type: 'spring',
       stiffness: 260,
@@ -67,7 +67,7 @@ export default function ContactPopup({ isOpen, onClose, onMessageClick }) {
               <h2 className="text-xl font-bold text-white">Get in touch</h2>
               <button
                 onClick={onClose}
-                className="absolute right-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-colors duration-300 hover:border-green-300/70 hover:text-green-300"
+                className="absolute right-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all duration-300 hover:border-green-300/70 hover:text-green-300 active:scale-95 active:border-green-300/70 active:text-green-300 cursor-pointer"
                 aria-label="Close contact popup"
               >
                 <FiX size={18} />
@@ -77,12 +77,13 @@ export default function ContactPopup({ isOpen, onClose, onMessageClick }) {
             <div className="space-y-3 text-center">
               <motion.a
                 variants={itemVariants}
+                whileTap={{ scale: 0.98 }}
                 href={`mailto:${contactDetails.email}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded-2xl border border-white/10 border-opacity-30 bg-white/5 p-3 transition-colors duration-300 hover:border-green-300/60 hover:bg-white/10"
+                className="group block rounded-2xl border border-white/10 border-opacity-30 bg-white/5 p-3 transition-all duration-300 hover:border-green-300/60 hover:bg-white/10 active:border-green-300/60 active:bg-white/10 cursor-pointer"
               >
-                <div className="mb-2.5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 border-opacity-30 bg-white/10 text-white transition-colors duration-300 group-hover:border-green-300/60 group-hover:text-green-300 mx-auto">
+                <div className="mb-2.5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 border-opacity-30 bg-white/10 text-white transition-colors duration-300 group-hover:border-green-300/60 group-hover:text-green-300 group-active:border-green-300/60 group-active:text-green-300 mx-auto">
                   <FiMail size={24} />
                 </div>
                 <h3 className="text-lg font-semibold text-white">Email Me</h3>
@@ -91,14 +92,15 @@ export default function ContactPopup({ isOpen, onClose, onMessageClick }) {
 
               <motion.a
                 variants={itemVariants}
+                whileTap={{ scale: 0.98 }}
                 href="#message-me"
                 onClick={(event) => {
                   event.preventDefault();
                   onMessageClick();
                 }}
-                className="group block rounded-2xl border border-white/10 border-opacity-30 bg-white/5 p-3 transition-colors duration-300 hover:border-green-300/60 hover:bg-white/10"
+                className="group block rounded-2xl border border-white/10 border-opacity-30 bg-white/5 p-3 transition-all duration-300 hover:border-green-300/60 hover:bg-white/10 active:border-green-300/60 active:bg-white/10 cursor-pointer"
               >
-                <div className="mb-2.5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 border-opacity-30 bg-white/10 text-white transition-colors duration-300 group-hover:border-green-300/60 group-hover:text-green-300 mx-auto">
+                <div className="mb-2.5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 border-opacity-30 bg-white/10 text-white transition-colors duration-300 group-hover:border-green-300/60 group-hover:text-green-300 group-active:border-green-300/60 group-active:text-green-300 mx-auto">
                   <FiMessageSquare size={24} />
                 </div>
                 <h3 className="text-lg font-semibold text-white">Message Me</h3>
@@ -113,31 +115,22 @@ export default function ContactPopup({ isOpen, onClose, onMessageClick }) {
                   href={contactDetails.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 border-opacity-30 bg-white/5 text-gray-200 transition-colors duration-300 hover:border-green-300/60 hover:text-green-300"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 border-opacity-30 bg-white/5 text-gray-200 transition-all duration-300 hover:border-green-300/60 hover:text-green-300 active:scale-95 active:border-green-300/60 active:text-green-300 cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <FiLinkedin size={20} />
                 </a>
+
                 <a
                   href={contactDetails.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 border-opacity-30 bg-white/5 text-gray-200 transition-colors duration-300 hover:border-green-300/60 hover:text-green-300"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 border-opacity-30 bg-white/5 text-gray-200 transition-all duration-300 hover:border-green-300/60 hover:text-green-300 active:scale-95 active:border-green-300/60 active:text-green-300 cursor-pointer"
                   aria-label="GitHub"
                 >
                   <FiGithub size={20} />
                 </a>
               </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="mt-5 text-center">
-              <button
-                onClick={onClose}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 transition-colors duration-300 hover:text-green-300"
-              >
-                Close
-                <FiExternalLink size={15} />
-              </button>
             </motion.div>
           </motion.div>
         </motion.div>

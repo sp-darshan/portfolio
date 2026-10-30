@@ -24,10 +24,10 @@ export default function Contact({ onOpenContact }) {
         >
           <button
             onClick={onOpenContact}
-            className="group inline-flex items-center font-mono gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-2.5 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-green-300/70 hover:bg-white/10"
+            className="group inline-flex items-center font-mono gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-2.5 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-green-300/70 hover:bg-white/10 active:scale-95 active:border-green-300/70 active:bg-white/15 cursor-pointer"
           >
             Let's Connect
-            <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1" aria-hidden="true" />
           </button>
         </motion.div>
       </div>
