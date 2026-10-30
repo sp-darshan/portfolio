@@ -17,7 +17,7 @@ export default function PublicationCard({
     <motion.article
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 1.01 }}
-      className="cursor-pointer rounded-xl border border-white/12 bg-white/5 p-5 md:p-6 transition-all duration-300 hover:border-green-400/40 hover:shadow-[0_0_18px_rgba(74,222,128,0.14)] active:border-green-400/40 active:shadow-[0_0_18px_rgba(74,222,128,0.18)]"
+      className="cursor-pointer rounded-xl border border-white/12 bg-white/5 p-5 md:p-6 transition-[border-color,box-shadow] duration-300 hover:border-green-400/40 hover:shadow-[0_0_18px_rgba(74,222,128,0.14)] active:border-green-400/40 active:shadow-[0_0_18px_rgba(74,222,128,0.18)]"
     >
       <div className="mb-3 flex items-start gap-3">
         <div className="mt-1 shrink-0 rounded-lg border border-green-400/35 bg-green-500/10 p-2 text-green-300">
@@ -43,7 +43,7 @@ export default function PublicationCard({
         {tags.slice(0, 6).map((tag) => (
           <span
             key={tag}
-            className="inline-flex items-center gap-1 rounded-full border border-green-400/30 bg-green-500/10 px-2 py-1 text-xs text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 hover:shadow-[0_2px_8px_rgba(255,255,255,0.18)] active:-translate-y-0.5 active:border-white/60 active:bg-white/10 active:shadow-[0_2px_8px_rgba(255,255,255,0.18)]"
+            className="inline-flex items-center gap-1 rounded-full border border-green-400/30 bg-green-500/10 px-2 py-1 text-xs text-white transition-colors duration-200"
           >
             {tag}
           </span>

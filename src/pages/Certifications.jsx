@@ -48,7 +48,7 @@ export default function Certifications() {
               key={index}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 1.02 }}
-              className="group cursor-pointer border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl p-6 transition-all duration-300 hover:border-green-400/40 hover:shadow-[0_0_20px_rgba(74,222,128,0.15)] active:border-green-400/40 active:shadow-[0_0_20px_rgba(74,222,128,0.2)]"
+              className="group cursor-pointer border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl p-6 transition-[border-color,box-shadow] duration-300 hover:border-green-400/40 hover:shadow-[0_0_20px_rgba(74,222,128,0.15)] active:border-green-400/40 active:shadow-[0_0_20px_rgba(74,222,128,0.2)]"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex flex-col items-start">

@@ -23,7 +23,7 @@ export default function Education() {
           <motion.div
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 1.03 }}
-            className="group cursor-pointer flex-1 flex gap-4 md:gap-6 bg-white/3 rounded-lg p-4 border border-white/10 border-opacity-30 hover:border-opacity-60 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 active:scale-105 active:shadow-lg active:shadow-green-400/50"
+            className="group cursor-pointer flex-1 flex gap-4 md:gap-6 bg-white/3 rounded-lg p-4 border border-white/10 border-opacity-30 hover:border-opacity-60 transition-[border-color,box-shadow,background-color] duration-300 hover:shadow-lg hover:shadow-green-400/50 active:shadow-lg active:shadow-green-400/50"
           >
             {/* Image Section */}
             <div className="w-20 h-20 md:w-1/6 md:h-24 bg-gray-800 rounded-lg shrink-0 flex items-center justify-center">
@@ -47,7 +47,7 @@ export default function Education() {
           <motion.div
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 1.03 }}
-            className="group cursor-pointer flex-1 flex gap-4 md:gap-6 bg-white/3 rounded-lg p-4 border border-white/10 border-opacity-30 hover:border-opacity-60 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 active:scale-105 active:shadow-lg active:shadow-green-400/50"
+            className="group cursor-pointer flex-1 flex gap-4 md:gap-6 bg-white/3 rounded-lg p-4 border border-white/10 border-opacity-30 hover:border-opacity-60 transition-[border-color,box-shadow,background-color] duration-300 hover:shadow-lg hover:shadow-green-400/50 active:shadow-lg active:shadow-green-400/50"
           >
             {/* Image Section */}
             <div className="w-20 h-20 md:w-1/6 md:h-24 bg-gray-800 rounded-lg shrink-0 flex items-center justify-center">

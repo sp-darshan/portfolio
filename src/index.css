@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
+*, *::before, *::after {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body, html {
   background: linear-gradient(to right, #000000, #1a1a1a) !important;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  touch-action: manipulation;
 }
 
 html::-webkit-scrollbar,

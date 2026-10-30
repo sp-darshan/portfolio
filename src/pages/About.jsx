@@ -29,7 +29,7 @@ export default function About() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 1.05 }}
-              className="bg-white/3 border border-white/10 border-opacity-30 rounded-xl p-5 md:p-6 cursor-pointer transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 hover:border-opacity-60 active:scale-105 active:shadow-lg active:shadow-green-400/50 active:border-opacity-60"
+              className="bg-white/3 border border-white/10 border-opacity-30 rounded-xl p-5 md:p-6 cursor-pointer transition-[border-color,box-shadow,border-opacity] duration-300 hover:shadow-lg hover:shadow-green-400/50 hover:border-opacity-60 active:shadow-lg active:shadow-green-400/50 active:border-opacity-60"
             >
               <div className="flex items-center gap-4">
                 <div className="text-green-400 text-5xl">
@@ -46,7 +46,7 @@ export default function About() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 1.05 }}
-              className="bg-white/3 border border-white/10 border-opacity-30 rounded-xl p-5 md:p-6 cursor-pointer transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 hover:border-opacity-60 active:scale-105 active:shadow-lg active:shadow-green-400/50 active:border-opacity-60"
+              className="bg-white/3 border border-white/10 border-opacity-30 rounded-xl p-5 md:p-6 cursor-pointer transition-[border-color,box-shadow,border-opacity] duration-300 hover:shadow-lg hover:shadow-green-400/50 hover:border-opacity-60 active:shadow-lg active:shadow-green-400/50 active:border-opacity-60"
             >
               <div className="flex items-center gap-4">
                 <div className="text-green-400 text-5xl">

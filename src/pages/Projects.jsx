@@ -132,7 +132,7 @@ function TechBadge({ label, compact = false }) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-full border border-green-400/30 bg-green-500/10 text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 hover:shadow-[0_2px_8px_rgba(255,255,255,0.18)] active:-translate-y-0.5 active:border-white/60 active:bg-white/10 active:shadow-[0_2px_8px_rgba(255,255,255,0.18)] ${compact ? 'px-2 py-1 text-xs' : 'px-3 py-1 text-sm'}`}
+      className={`inline-flex items-center gap-1 rounded-full border border-green-400/30 bg-green-500/10 text-white transition-colors duration-200 ${compact ? 'px-2 py-1 text-xs' : 'px-3 py-1 text-sm'}`}
     >
       <Icon className={compact ? 'text-sm' : 'text-base'} aria-hidden="true" />
       <span>{label}</span>
@@ -170,7 +170,7 @@ export default function Projects() {
           <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 1.02 }}
-            className="group cursor-pointer grid md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16 border border-white/10 bg-white/3 rounded-lg p-4 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 active:scale-102 active:shadow-lg active:shadow-green-400/50"
+            className="group cursor-pointer grid md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16 border border-white/10 bg-white/3 rounded-lg p-4 transition-[border-color,box-shadow,background-color] duration-300 hover:shadow-lg hover:shadow-green-400/50 active:shadow-lg active:shadow-green-400/50"
           >
             {/* Image */}
             <div className="overflow-hidden rounded-xl">
@@ -183,7 +183,7 @@ export default function Projects() {
 
             {/* Content */}
             <div className="flex flex-col justify-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)] group-active:text-green-400">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 transition-colors duration-300 group-hover:text-green-400 group-active:text-green-400">
                 {featured.title}
               </h2>
               <p className="text-gray-300 mb-4">{featured.desc}</p>
@@ -227,22 +227,22 @@ export default function Projects() {
           {others.map((project, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 1.03 }}
-              className="group cursor-pointer border border-white/10 bg-white/3 rounded-lg p-4 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-400/50 active:scale-103 active:shadow-lg active:shadow-green-400/50 md:min-h-[430px] flex flex-col"
+              className="group cursor-pointer border border-white/10 bg-white/3 rounded-lg p-4 transition-[border-color,box-shadow,background-color] duration-300 hover:shadow-lg hover:shadow-green-400/50 active:shadow-lg active:shadow-green-400/50 md:min-h-[430px] flex flex-col"
             >
               {/* Image */}
-              <div className="overflow-hidden">
+              <div className="overflow-hidden rounded-md">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-40 object-cover hover:scale-110 active:scale-110 transition duration-500"
+                  className="w-full h-40 object-cover hover:scale-105 active:scale-105 transition-transform duration-300"
                 />
               </div>
 
               {/* Content */}
               <div className="p-4 flex flex-col flex-1">
-                <h3 className="text-xl md:text-2xl font-semibold mb-2 whitespace-pre-line transition-all duration-300 ease-out group-hover:text-green-400 group-hover:drop-shadow-[0_0_8px_rgba(74,222,128,0.2)] group-active:text-green-400">
+                <h3 className="text-xl md:text-2xl font-semibold mb-2 whitespace-pre-line transition-colors duration-300 group-hover:text-green-400 group-active:text-green-400">
                   {project.title}
                 </h3>
                 <p className="text-gray-400 text-md mb-4">
