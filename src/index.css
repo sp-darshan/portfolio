@@ -119,3 +119,40 @@ body::-webkit-scrollbar {
     display: none !important;
   }
 }
+
+/* Disable text selection and callouts in mobile layout */
+@media (max-width: 768px) {
+  body,
+  section,
+  nav,
+  header,
+  footer,
+  div,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  a,
+  button,
+  article {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Keep input fields and textareas editable and selectable */
+  input,
+  textarea,
+  [contenteditable="true"] {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+  }
+}
